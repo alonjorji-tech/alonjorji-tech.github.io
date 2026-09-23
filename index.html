@@ -229,6 +229,7 @@
     overflow:hidden;
     border-radius: 2px;
     background: var(--surface);
+    cursor:pointer;
   }
   .reel video{
     width:100%; height:100%; object-fit:cover; display:block;
@@ -245,6 +246,17 @@
     font-family: var(--serif);
     font-size: 1rem;
   }
+  .reel-play{
+    position:absolute; inset:0; z-index:2;
+    display:flex; align-items:center; justify-content:center;
+    font-size: 1.5rem;
+    color:#F4EDE0;
+    background: rgba(13,11,9,0.22);
+    transition: opacity .25s ease;
+    pointer-events:none;
+  }
+  .reel.is-playing .reel-play{ opacity:0; }
+  .reels-moments{ grid-template-columns: repeat(4, 1fr); }
 
   /* ---------- TOP NAV ---------- */
   .topnav{
@@ -367,6 +379,7 @@
 <nav class="topnav">
   <a href="#landscape">תמונות</a>
   <a href="#work">וידאו</a>
+  <a href="#moments">רגעים</a>
   <a href="#israel-trail">שביל ישראל</a>
   <a href="#collabs">שיתופי פעולה</a>
 </nav>
@@ -505,12 +518,37 @@
       <p class="flow-line">קטעים מתוך פרויקטים שצילמתי — כל אחד עולם קצת אחר.</p>
     </div>
     <div class="reels">
-      <div class="reel"><video src="videos/work/wedding.mp4" poster="videos/work/wedding-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-label">חתונה</span></div>
-      <div class="reel"><video src="videos/work/winery.mp4" poster="videos/work/winery-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-label">אירוע יקב</span></div>
-      <div class="reel"><video src="videos/work/police.mp4" poster="videos/work/police-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-label">משטרה</span></div>
-      <div class="reel"><video src="videos/work/teambuilding.mp4" poster="videos/work/teambuilding-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-label">גיבוש צוותי</span></div>
-      <div class="reel"><video src="videos/work/fitness.mp4" poster="videos/work/fitness-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-label">כושר</span></div>
-      <div class="reel"><video src="videos/work/comedy.mp4" poster="videos/work/comedy-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-label">תוכן קליל</span></div>
+      <div class="reel"><video src="videos/work/wedding.mp4" poster="videos/work/wedding-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">חתונה</span></div>
+      <div class="reel"><video src="videos/work/winery.mp4" poster="videos/work/winery-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">אירוע יקב</span></div>
+      <div class="reel"><video src="videos/work/police.mp4" poster="videos/work/police-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">משטרה</span></div>
+      <div class="reel"><video src="videos/work/police2.mp4" poster="videos/work/police2-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">משטרה · פרק נוסף</span></div>
+      <div class="reel"><video src="videos/work/teambuilding.mp4" poster="videos/work/teambuilding-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">גיבוש צוותי</span></div>
+      <div class="reel"><video src="videos/work/fitness.mp4" poster="videos/work/fitness-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">כושר</span></div>
+      <div class="reel"><video src="videos/work/desserts.mp4" poster="videos/work/desserts-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">קינוחים</span></div>
+      <div class="reel"><video src="videos/work/comedy.mp4" poster="videos/work/comedy-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">תוכן קליל</span></div>
+    </div>
+  </section>
+
+  <section class="flow" id="moments">
+    <div class="flow-head">
+      <h3 class="flow-label">רגעים</h3>
+      <p class="flow-line">קטעים מהיומיום — לא תמיד עבודה, תמיד אני.</p>
+    </div>
+    <div class="reels reels-moments">
+      <div class="reel"><video src="videos/moments/coffee-field.mp4" poster="videos/moments/coffee-field-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">קפה בשדה</span></div>
+      <div class="reel"><video src="videos/moments/desert-hike.mp4" poster="videos/moments/desert-hike-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">טרק במדבר</span></div>
+      <div class="reel"><video src="videos/moments/wine-party.mp4" poster="videos/moments/wine-party-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">מסיבה</span></div>
+      <div class="reel"><video src="videos/moments/drone-launch.mp4" poster="videos/moments/drone-launch-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">מאחורי הקלעים</span></div>
+      <div class="reel"><video src="videos/moments/bts-portrait.mp4" poster="videos/moments/bts-portrait-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">מאחורי המצלמה</span></div>
+      <div class="reel"><video src="videos/moments/horse.mp4" poster="videos/moments/horse-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">חווה</span></div>
+      <div class="reel"><video src="videos/moments/white-dress.mp4" poster="videos/moments/white-dress-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">שדה</span></div>
+      <div class="reel"><video src="videos/moments/jeep-splash.mp4" poster="videos/moments/jeep-splash-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">ג'יפים</span></div>
+      <div class="reel"><video src="videos/moments/wine-ad.mp4" poster="videos/moments/wine-ad-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">תוכן קליל</span></div>
+      <div class="reel"><video src="videos/moments/salon.mp4" poster="videos/moments/salon-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">שיתוף פעולה</span></div>
+      <div class="reel"><video src="videos/moments/vlog-word.mp4" poster="videos/moments/vlog-word-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">ולוג</span></div>
+      <div class="reel"><video src="videos/moments/ai-naples.mp4" poster="videos/moments/ai-naples-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">ניסוי AI</span></div>
+      <div class="reel"><video src="videos/moments/wine-pour.mp4" poster="videos/moments/wine-pour-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">יין</span></div>
+      <div class="reel"><video src="videos/moments/travel-vlog.mp4" poster="videos/moments/travel-vlog-poster.jpg" muted loop playsinline preload="none"></video><span class="reel-play">&#9658;</span><span class="reel-label">טיולים</span></div>
     </div>
   </section>
 
@@ -607,10 +645,17 @@
   var heroClips = [
     "videos/hero/nyc-day.mp4",
     "videos/hero/nyc-dusk.mp4",
+    "videos/hero/nyc-night2.mp4",
     "videos/hero/red-rock.mp4",
+    "videos/hero/desert-truck.mp4",
     "videos/hero/negev-jeep.mp4",
+    "videos/hero/mountain-dusk.mp4",
+    "videos/hero/surfing.mp4",
     "videos/hero/plane-wreck.mp4",
-    "videos/hero/golan-lookout.mp4"
+    "videos/hero/plane-wreck-alt.mp4",
+    "videos/hero/golan-lookout.mp4",
+    "videos/hero/golan-valley.mp4",
+    "videos/hero/golan-jump.mp4"
   ];
   var v = document.getElementById('hero-video');
   if(!v) return;
@@ -625,24 +670,30 @@
 })();
 
 (function(){
-  var reels = document.querySelectorAll('.reel video');
-  if(!reels.length) return;
-  if(!('IntersectionObserver' in window)){
-    reels.forEach(function(r){ r.preload = 'auto'; r.play().catch(function(){}); });
-    return;
-  }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      var vid = entry.target;
-      if(entry.isIntersecting){
-        if(vid.preload === 'none'){ vid.preload = 'auto'; }
-        vid.play().catch(function(){});
-      } else {
-        vid.pause();
-      }
+  var reelVideos = document.querySelectorAll('.reel video');
+  if(!reelVideos.length) return;
+
+  function pauseAllExcept(except){
+    reelVideos.forEach(function(v){
+      if(v !== except && !v.paused){ v.pause(); }
     });
-  }, {threshold: 0.35});
-  reels.forEach(function(r){ io.observe(r); });
+  }
+
+  reelVideos.forEach(function(vid){
+    var card = vid.closest('.reel');
+    vid.addEventListener('play', function(){
+      pauseAllExcept(vid);
+      card.classList.add('is-playing');
+    });
+    vid.addEventListener('pause', function(){
+      card.classList.remove('is-playing');
+    });
+    card.addEventListener('click', function(){
+      if(vid.preload === 'none'){ vid.preload = 'auto'; }
+      if(vid.paused){ vid.play().catch(function(){}); }
+      else { vid.pause(); }
+    });
+  });
 })();
 
 (function(){
