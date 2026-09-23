@@ -274,54 +274,49 @@
     margin-top: 6px;
   }
   .story-text strong{ color: var(--ink); font-weight:600; }
-  .episodes{
+  .yt-grid{
     display:grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
     margin-top: 30px;
   }
-  .episode{
-    display:block;
-    padding: 16px 14px;
-    background: var(--surface);
-    border-radius: 2px;
-    color: var(--ink-dim);
-    font-size: 0.92rem;
-    border: 1px solid var(--hair);
-    transition: border-color .25s ease, color .25s ease;
-  }
-  .episode:hover{ border-color: var(--gold); color: var(--ink); text-decoration:none; }
-  .episode .ep-num{ color: var(--gold); font-family: var(--serif); font-size:1.1rem; display:block; margin-bottom:6px; }
-  .episodes-empty{
-    color: var(--ink-faint);
-    font-size: 0.95rem;
-    padding: 22px 0;
-    border-top: 1px dashed var(--hair);
-    margin-top: 24px;
-  }
-
-  .sub-collab{
-    margin-top: 50px;
-    padding-top: 30px;
-    border-top: 1px solid var(--hair);
-  }
-  .sub-head{
-    font-family: var(--serif);
-    font-size: 1.15rem;
-    color: var(--ink);
-    margin-bottom: 22px;
-  }
+  .yt-grid-small{ margin-top: 0; }
   .sub-line{
     color: var(--gold);
     font-size: 0.88rem;
     letter-spacing: 0.03em;
-    margin: 22px 0 10px;
+    margin: 34px 0 0;
   }
-  .sub-line:first-of-type{ margin-top:0; }
-  .episodes-small{
-    grid-template-columns: repeat(4, 1fr);
-    margin-top: 0;
+  .yt{
+    position:relative;
+    aspect-ratio: 16/9;
+    overflow:hidden;
+    border-radius: 2px;
+    background: var(--surface);
+    cursor:pointer;
   }
+  .yt-thumb{
+    width:100%; height:100%; object-fit:cover; display:block;
+    transition: transform .4s ease;
+  }
+  .yt:hover .yt-thumb{ transform: scale(1.05); }
+  .yt-play{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    font-size: 1.4rem;
+    color:#F4EDE0;
+    background: rgba(13,11,9,0.28);
+    transition: background .25s ease;
+  }
+  .yt:hover .yt-play{ background: rgba(13,11,9,0.15); }
+  .yt .ep-num{
+    position:absolute; top:8px; right:10px; z-index:2;
+    color: var(--gold);
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  }
+  .yt iframe{ width:100%; height:100%; border:0; display:block; }
 
   @media (max-width: 640px){
     .gallery{ columns: 2 160px; column-gap: 10px; }
@@ -330,8 +325,7 @@
     .flow-head{ flex-direction:column; gap:8px; }
     .reels{ grid-template-columns: repeat(2, 1fr); gap:10px; }
     .topnav{ gap:18px; padding:12px 16px; }
-    .episodes{ grid-template-columns: repeat(2, 1fr); }
-    .episodes-small{ grid-template-columns: repeat(2, 1fr); }
+    .yt-grid{ grid-template-columns: repeat(2, 1fr); }
   }
 
   /* ---------- CLOSING ---------- */
@@ -374,6 +368,7 @@
   <a href="#landscape">תמונות</a>
   <a href="#work">וידאו</a>
   <a href="#israel-trail">שביל ישראל</a>
+  <a href="#collabs">שיתופי פעולה</a>
 </nav>
 
 <header class="hero">
@@ -525,28 +520,71 @@
       <p class="flow-line">שבעה פרקים, רחפן על הגב, ותחביב שהפך למקצוע.</p>
     </div>
     <p class="story-text">בקורונה עשיתי את שביל ישראל בפעם השנייה — הפעם בתור הצלם של <strong>אוהד הנווד</strong>. היינו צוות של שני צלמים ועורך וידאו, וסחבנו על הגב את כל הציוד הרגיל של שביל ישראל, ועוד רחפנים, ציוד צילום וכל מה שצריך מסביב. יצא מזה סדרה בת שבעה פרקים ביוטיוב — ואי שם על השביל נפתחו לי הצ'אקרות על הצילום. הבנתי שיש לי סיכוי אמיתי להצליח בתור צלם בארץ. מה שהתחיל כתחביב הפך להזדמנות מקצועית עם בלוגר ידוע, ומשם זה כבר לא נעצר.</p>
-    <div class="episodes">
-      <a class="episode" href="https://youtu.be/3TAO9qaFCPM" target="_blank" rel="noopener"><span class="ep-num">01</span>צפייה ביוטיוב</a>
-      <a class="episode" href="https://youtu.be/L_zBPDN5tI4" target="_blank" rel="noopener"><span class="ep-num">02</span>צפייה ביוטיוב</a>
-      <a class="episode" href="https://youtu.be/VX50nIpvSEs" target="_blank" rel="noopener"><span class="ep-num">03</span>צפייה ביוטיוב</a>
-      <a class="episode" href="https://youtu.be/cn2gsq4DAHk" target="_blank" rel="noopener"><span class="ep-num">04</span>צפייה ביוטיוב</a>
-      <a class="episode" href="https://youtu.be/6sHZYaEMnzY" target="_blank" rel="noopener"><span class="ep-num">05</span>צפייה ביוטיוב</a>
-      <a class="episode" href="https://youtu.be/pIupYoYUcbQ" target="_blank" rel="noopener"><span class="ep-num">06</span>צפייה ביוטיוב</a>
-      <a class="episode" href="https://youtu.be/F-IteuVtEr0" target="_blank" rel="noopener"><span class="ep-num">07</span>צפייה ביוטיוב</a>
+    <div class="yt-grid">
+      <div class="yt" data-yt-id="3TAO9qaFCPM">
+        <img class="yt-thumb" src="https://img.youtube.com/vi/3TAO9qaFCPM/hqdefault.jpg" alt="" loading="lazy">
+        <span class="yt-play">&#9658;</span>
+        <span class="ep-num">01</span>
+      </div>
+      <div class="yt" data-yt-id="L_zBPDN5tI4">
+        <img class="yt-thumb" src="https://img.youtube.com/vi/L_zBPDN5tI4/hqdefault.jpg" alt="" loading="lazy">
+        <span class="yt-play">&#9658;</span>
+        <span class="ep-num">02</span>
+      </div>
+      <div class="yt" data-yt-id="VX50nIpvSEs">
+        <img class="yt-thumb" src="https://img.youtube.com/vi/VX50nIpvSEs/hqdefault.jpg" alt="" loading="lazy">
+        <span class="yt-play">&#9658;</span>
+        <span class="ep-num">03</span>
+      </div>
+      <div class="yt" data-yt-id="cn2gsq4DAHk">
+        <img class="yt-thumb" src="https://img.youtube.com/vi/cn2gsq4DAHk/hqdefault.jpg" alt="" loading="lazy">
+        <span class="yt-play">&#9658;</span>
+        <span class="ep-num">04</span>
+      </div>
+      <div class="yt" data-yt-id="6sHZYaEMnzY">
+        <img class="yt-thumb" src="https://img.youtube.com/vi/6sHZYaEMnzY/hqdefault.jpg" alt="" loading="lazy">
+        <span class="yt-play">&#9658;</span>
+        <span class="ep-num">05</span>
+      </div>
+      <div class="yt" data-yt-id="pIupYoYUcbQ">
+        <img class="yt-thumb" src="https://img.youtube.com/vi/pIupYoYUcbQ/hqdefault.jpg" alt="" loading="lazy">
+        <span class="yt-play">&#9658;</span>
+        <span class="ep-num">06</span>
+      </div>
+      <div class="yt" data-yt-id="F-IteuVtEr0">
+        <img class="yt-thumb" src="https://img.youtube.com/vi/F-IteuVtEr0/hqdefault.jpg" alt="" loading="lazy">
+        <span class="yt-play">&#9658;</span>
+        <span class="ep-num">07</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="flow" id="collabs">
+    <div class="flow-head">
+      <h3 class="flow-label">שיתופי פעולה</h3>
+      <p class="flow-line">פרויקטים שעשיתי לצד יוצרים אחרים.</p>
     </div>
 
-    <div class="sub-collab">
-      <h4 class="sub-head">עוד שיתופי פעולה</h4>
-
-      <p class="sub-line">מעיינות וטיולים בשומרון</p>
-      <div class="episodes episodes-small">
-      <a class="episode" href="https://youtu.be/SLkhK2oBsiI" target="_blank" rel="noopener"><span class="ep-num">01</span>צפייה ביוטיוב</a>
-      <a class="episode" href="https://youtu.be/bE0vlRExwMI" target="_blank" rel="noopener"><span class="ep-num">02</span>צפייה ביוטיוב</a>
+    <p class="sub-line">אוהד הנווד · מעיינות וטיולים בשומרון</p>
+    <div class="yt-grid yt-grid-small">
+      <div class="yt" data-yt-id="SLkhK2oBsiI">
+        <img class="yt-thumb" src="https://img.youtube.com/vi/SLkhK2oBsiI/hqdefault.jpg" alt="" loading="lazy">
+        <span class="yt-play">&#9658;</span>
+        <span class="ep-num">01</span>
       </div>
+      <div class="yt" data-yt-id="bE0vlRExwMI">
+        <img class="yt-thumb" src="https://img.youtube.com/vi/bE0vlRExwMI/hqdefault.jpg" alt="" loading="lazy">
+        <span class="yt-play">&#9658;</span>
+        <span class="ep-num">02</span>
+      </div>
+    </div>
 
-      <p class="sub-line">אוכל באשדוד, עם עמית כפית</p>
-      <div class="episodes episodes-small">
-      <a class="episode" href="https://youtu.be/mHIoaR-HVio" target="_blank" rel="noopener"><span class="ep-num">01</span>צפייה ביוטיוב</a>
+    <p class="sub-line">עמית כפית · אוכל באשדוד</p>
+    <div class="yt-grid yt-grid-small">
+      <div class="yt" data-yt-id="mHIoaR-HVio">
+        <img class="yt-thumb" src="https://img.youtube.com/vi/mHIoaR-HVio/hqdefault.jpg" alt="" loading="lazy">
+        <span class="yt-play">&#9658;</span>
+        <span class="ep-num">01</span>
       </div>
     </div>
   </section>
@@ -605,5 +643,15 @@
     });
   }, {threshold: 0.35});
   reels.forEach(function(r){ io.observe(r); });
+})();
+
+(function(){
+  document.querySelectorAll('.yt').forEach(function(el){
+    el.addEventListener('click', function(){
+      var id = el.getAttribute('data-yt-id');
+      el.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0" ' +
+        'allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="YouTube video player"></iframe>';
+    }, {once:true});
+  });
 })();
 </script>
