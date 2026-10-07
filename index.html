@@ -258,6 +258,35 @@
   .reel.is-playing .reel-play{ opacity:0; }
   .reels-moments{ grid-template-columns: repeat(4, 1fr); }
 
+  /* ---------- VIDEO LIGHTBOX ---------- */
+  .video-lightbox{
+    position:fixed; inset:0; z-index:200;
+    background: rgba(8,7,6,0.96);
+    display:none;
+    align-items:center; justify-content:center;
+  }
+  .video-lightbox.is-open{ display:flex; }
+  .video-lightbox video{
+    max-width:92vw; max-height:92vh;
+    width:auto; height:auto;
+    outline:none;
+    background:#000;
+  }
+  .lightbox-close{
+    position:absolute; top:18px; left:18px; z-index:201;
+    width:44px; height:44px;
+    border-radius:50%;
+    border:1px solid rgba(244,237,224,0.35);
+    background: rgba(13,11,9,0.55);
+    color:#F4EDE0;
+    font-size:1.6rem;
+    line-height:1;
+    cursor:pointer;
+  }
+  @media (max-width: 720px){
+    .lightbox-close{ top:12px; left:12px; width:38px; height:38px; font-size:1.3rem; }
+  }
+
   /* ---------- TOP NAV ---------- */
   .topnav{
     position: fixed; top:0; inset-inline:0; z-index:50;
@@ -687,6 +716,11 @@
 
 </main>
 
+<div id="video-lightbox" class="video-lightbox">
+  <button type="button" class="lightbox-close" aria-label="סגור">&times;</button>
+  <video id="lightbox-video" playsinline controls></video>
+</div>
+
 <script>
 (function(){
   var heroClips = [
@@ -717,29 +751,44 @@
 })();
 
 (function(){
-  var reelVideos = document.querySelectorAll('.reel video');
-  if(!reelVideos.length) return;
+  var reelCards = document.querySelectorAll('.reel');
+  if(!reelCards.length) return;
 
-  function pauseAllExcept(except){
-    reelVideos.forEach(function(v){
-      if(v !== except && !v.paused){ v.pause(); }
-    });
+  var lightbox = document.getElementById('video-lightbox');
+  var lightboxVideo = document.getElementById('lightbox-video');
+  var closeBtn = lightbox.querySelector('.lightbox-close');
+
+  function openLightbox(src){
+    lightboxVideo.src = src;
+    lightboxVideo.muted = false;
+    lightboxVideo.volume = 1;
+    lightbox.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    lightboxVideo.play().catch(function(){});
   }
 
-  reelVideos.forEach(function(vid){
-    var card = vid.closest('.reel');
-    vid.addEventListener('play', function(){
-      pauseAllExcept(vid);
-      card.classList.add('is-playing');
-    });
-    vid.addEventListener('pause', function(){
-      card.classList.remove('is-playing');
-    });
+  function closeLightbox(){
+    lightbox.classList.remove('is-open');
+    document.body.style.overflow = '';
+    lightboxVideo.pause();
+    lightboxVideo.removeAttribute('src');
+    lightboxVideo.load();
+  }
+
+  reelCards.forEach(function(card){
+    var vid = card.querySelector('video');
+    if(!vid) return;
     card.addEventListener('click', function(){
-      if(vid.preload === 'none'){ vid.preload = 'auto'; }
-      if(vid.paused){ vid.play().catch(function(){}); }
-      else { vid.pause(); }
+      openLightbox(vid.currentSrc || vid.src);
     });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function(e){
+    if(e.target === lightbox){ closeLightbox(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && lightbox.classList.contains('is-open')){ closeLightbox(); }
   });
 })();
 
