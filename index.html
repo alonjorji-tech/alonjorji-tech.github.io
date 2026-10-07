@@ -1,60 +1,60 @@
 <title>אלון אסף ג'ורג'י</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;600&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     direction: rtl;
-    --bg: #15120F;
-    --surface: #1E1812;
-    --surface-2: #241D16;
-    --ink: #EEE6D9;
-    --ink-dim: #AFA495;
-    --ink-faint: #7A7062;
-    --gold: #E3A542;
-    --gold-deep: #B9812E;
-    --slate: #5C7C89;
-    --hair: rgba(238,230,217,0.14);
-    --serif: "Frank Ruhl Libre", "Times New Roman", serif;
-    --sans: "Assistant", "Arial Hebrew", Arial, sans-serif;
+    --bg: #0E1A1C;
+    --surface: #142427;
+    --surface-2: #1A2D30;
+    --ink: #E9EDE9;
+    --ink-dim: #8FA5A3;
+    --ink-faint: #5F7472;
+    --gold: #C98F3D;
+    --gold-deep: #A5721F;
+    --slate: #B9766B;
+    --hair: rgba(233,237,233,0.14);
+    --serif: "Rubik", "Arial Hebrew", Arial, sans-serif;
+    --sans: "Rubik", "Arial Hebrew", Arial, sans-serif;
   }
   @media (prefers-color-scheme: light){
     :root:not([data-theme="dark"]){
-      --bg: #EAE3D4;
-      --surface: #E1D8C4;
-      --surface-2: #D8CDB5;
-      --ink: #211B14;
-      --ink-dim: #5B5041;
-      --ink-faint: #85795F;
-      --gold: #A9701E;
-      --gold-deep: #8A5A17;
-      --slate: #33515C;
-      --hair: rgba(33,27,20,0.14);
+      --bg: #E7EDE9;
+      --surface: #DCE5DF;
+      --surface-2: #CFDAD3;
+      --ink: #142427;
+      --ink-dim: #46605E;
+      --ink-faint: #6E8785;
+      --gold: #A5721F;
+      --gold-deep: #7F5717;
+      --slate: #8A4F45;
+      --hair: rgba(20,36,39,0.14);
     }
   }
   :root[data-theme="light"]{
-    --bg: #EAE3D4;
-    --surface: #E1D8C4;
-    --surface-2: #D8CDB5;
-    --ink: #211B14;
-    --ink-dim: #5B5041;
-    --ink-faint: #85795F;
-    --gold: #A9701E;
-    --gold-deep: #8A5A17;
-    --slate: #33515C;
-    --hair: rgba(33,27,20,0.14);
+    --bg: #E7EDE9;
+    --surface: #DCE5DF;
+    --surface-2: #CFDAD3;
+    --ink: #142427;
+    --ink-dim: #46605E;
+    --ink-faint: #6E8785;
+    --gold: #A5721F;
+    --gold-deep: #7F5717;
+    --slate: #8A4F45;
+    --hair: rgba(20,36,39,0.14);
   }
   :root[data-theme="dark"]{
-    --bg: #15120F;
-    --surface: #1E1812;
-    --surface-2: #241D16;
-    --ink: #EEE6D9;
-    --ink-dim: #AFA495;
-    --ink-faint: #7A7062;
-    --gold: #E3A542;
-    --gold-deep: #B9812E;
-    --slate: #5C7C89;
-    --hair: rgba(238,230,217,0.14);
+    --bg: #0E1A1C;
+    --surface: #142427;
+    --surface-2: #1A2D30;
+    --ink: #E9EDE9;
+    --ink-dim: #8FA5A3;
+    --ink-faint: #5F7472;
+    --gold: #C98F3D;
+    --gold-deep: #A5721F;
+    --slate: #B9766B;
+    --hair: rgba(233,237,233,0.14);
   }
 
   *{box-sizing:border-box;}
@@ -69,7 +69,7 @@
     text-align: right;
   }
   img{max-width:100%; display:block;}
-  h1,h2,h3{font-family: var(--serif); font-weight: 500; text-wrap: balance; margin:0;}
+  h1,h2,h3{font-family: var(--serif); font-weight: 700; text-wrap: balance; margin:0;}
   p{margin:0;}
   a{color: var(--gold); text-decoration: none;}
   a:hover{text-decoration: underline;}
@@ -84,7 +84,7 @@
     display:flex;
     align-items:flex-end;
     overflow:hidden;
-    background: #0d0b09;
+    background: #0a1416;
   }
   .hero img{
     position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
@@ -93,7 +93,7 @@
   .hero::after{
     content:"";
     position:absolute; inset:0;
-    background: linear-gradient(180deg, rgba(13,11,9,0.15) 0%, rgba(13,11,9,0.15) 40%, rgba(13,11,9,0.88) 100%);
+    background: linear-gradient(180deg, rgba(10,20,22,0.15) 0%, rgba(10,20,22,0.15) 40%, rgba(10,20,22,0.88) 100%);
   }
   .hero-inner{
     position:relative; z-index:2;
@@ -110,13 +110,13 @@
     display:block;
   }
   .hero h1{
-    color: #F4EDE0;
+    color: #E9EDE9;
     font-size: clamp(2.1rem, 6vw, 4rem);
     line-height: 1.15;
     max-width: 14ch;
   }
   .hero-line{
-    color: #DCD2C0;
+    color: #C7D4D2;
     font-size: clamp(1rem, 2vw, 1.2rem);
     line-height: 1.65;
     max-width: 34ch;
@@ -126,7 +126,7 @@
   }
   .scroll-hint{
     position:absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
-    color: rgba(244,237,224,0.55);
+    color: rgba(233,237,233,0.55);
     font-size: 0.75rem;
     letter-spacing: 0.1em;
     z-index:2;
@@ -237,12 +237,12 @@
   .reel::after{
     content:"";
     position:absolute; inset:0;
-    background: linear-gradient(180deg, rgba(13,11,9,0) 55%, rgba(13,11,9,0.85) 100%);
+    background: linear-gradient(180deg, rgba(10,20,22,0) 55%, rgba(10,20,22,0.85) 100%);
     pointer-events:none;
   }
   .reel-label{
     position:absolute; right:12px; bottom:10px; z-index:2;
-    color:#F4EDE0;
+    color:#E9EDE9;
     font-family: var(--serif);
     font-size: 1rem;
   }
@@ -250,8 +250,8 @@
     position:absolute; inset:0; z-index:2;
     display:flex; align-items:center; justify-content:center;
     font-size: 1.5rem;
-    color:#F4EDE0;
-    background: rgba(13,11,9,0.22);
+    color:#E9EDE9;
+    background: rgba(10,20,22,0.22);
     transition: opacity .25s ease;
     pointer-events:none;
   }
@@ -261,7 +261,7 @@
   /* ---------- VIDEO LIGHTBOX ---------- */
   .video-lightbox{
     position:fixed; inset:0; z-index:200;
-    background: rgba(8,7,6,0.96);
+    background: rgba(6,12,13,0.96);
     display:none;
     align-items:center; justify-content:center;
   }
@@ -276,9 +276,9 @@
     position:absolute; top:18px; left:18px; z-index:201;
     width:44px; height:44px;
     border-radius:50%;
-    border:1px solid rgba(244,237,224,0.35);
-    background: rgba(13,11,9,0.55);
-    color:#F4EDE0;
+    border:1px solid rgba(233,237,233,0.35);
+    background: rgba(10,20,22,0.55);
+    color:#E9EDE9;
     font-size:1.6rem;
     line-height:1;
     cursor:pointer;
@@ -292,11 +292,11 @@
     position: fixed; top:0; inset-inline:0; z-index:50;
     display:flex; justify-content:center; gap: 30px;
     padding: 16px 20px;
-    background: linear-gradient(180deg, rgba(13,11,9,0.82) 0%, rgba(13,11,9,0.55) 70%, rgba(13,11,9,0) 100%);
+    background: linear-gradient(180deg, rgba(10,20,22,0.82) 0%, rgba(10,20,22,0.55) 70%, rgba(10,20,22,0) 100%);
     backdrop-filter: blur(2px);
   }
   .topnav a{
-    color: rgba(244,237,224,0.82);
+    color: rgba(233,237,233,0.82);
     font-size: 0.82rem;
     letter-spacing: 0.08em;
     text-decoration:none;
@@ -304,7 +304,7 @@
     padding-bottom: 3px;
     transition: border-color .3s ease, color .3s ease;
   }
-  .topnav a:hover{ color:#F4EDE0; border-color: var(--gold); }
+  .topnav a:hover{ color:#E9EDE9; border-color: var(--gold); }
 
   /* ---------- ISRAEL TRAIL / SERIES ---------- */
   .story-text{
@@ -345,11 +345,11 @@
     position:absolute; inset:0;
     display:flex; align-items:center; justify-content:center;
     font-size: 1.4rem;
-    color:#F4EDE0;
-    background: rgba(13,11,9,0.28);
+    color:#E9EDE9;
+    background: rgba(10,20,22,0.28);
     transition: background .25s ease;
   }
-  .yt:hover .yt-play{ background: rgba(13,11,9,0.15); }
+  .yt:hover .yt-play{ background: rgba(10,20,22,0.15); }
   .yt .ep-num{
     position:absolute; top:8px; right:10px; z-index:2;
     color: var(--gold);
